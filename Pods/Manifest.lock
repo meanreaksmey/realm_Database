@@ -1,0 +1,31 @@
+PODS:
+  - Realm (1.1.0):
+    - Realm/Headers (= 1.1.0)
+  - Realm/Headers (1.1.0)
+  - RealmSwift (1.1.0):
+    - Realm (= 1.1.0)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Realm
+  - RealmSwift
+  - SwiftyJSON (from `https://github.com/acegreen/SwiftyJSON.git`, branch `swift3`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :branch: swift3
+    :git: https://github.com/acegreen/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 8971384559780e631b041ac91b16734a396d4c14
+    :git: https://github.com/acegreen/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
+  RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+PODFILE CHECKSUM: 29e55adc88485fe12629eee47974b43705d9b007
+
+COCOAPODS: 1.1.0.rc.2
