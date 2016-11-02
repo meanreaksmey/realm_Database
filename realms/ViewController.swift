@@ -12,18 +12,12 @@ import SwiftyJSON
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
-   
+    
     
     @IBOutlet weak var TableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //insert data
-               
-        //        //update data
-        //        searchData(search_name: "koki",new_name:"Mina")
-        //        //delete data
-        //        deleteData(name: "Mina")
-        //        //filter query data
+      
         
         queryPeople()
     }
@@ -63,10 +57,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             cell.txtAge.text =  "\(allPeople[indexPath.row].age)"
             cell.txtRace.text =  allPeople[indexPath.row]["race"] as? String
         }
-        
-        
-        //        print("===============",)
-        
         return cell
     }
 }

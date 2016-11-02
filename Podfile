@@ -6,7 +6,7 @@ target "realms" do
     pod "Realm"
     pod "RealmSwift"
     pod 'SwiftyJSON', :git => 'https://github.com/acegreen/SwiftyJSON.git', :branch => 'swift3'
-
+    pod 'ObjectMapper'
 
 end
 

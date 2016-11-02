@@ -9,10 +9,12 @@
 import Foundation
 import SwiftyJSON
 import RealmSwift
+import ObjectMapper
 
 var allPeople = List<Human>()
 var jsonData = [JSON]()
-var pagination : NSInteger = 5
+var pagination : NSInteger = 1
+
 func queryPeople(){
     allPeople.removeAll()
     let realm = try! Realm()
@@ -26,18 +28,34 @@ func queryPeople(){
         indexCatch += 1
         if indexCatch >= pagination {
             allPeople = allPerson
-             print("====pagination: ",pagination)
-             pagination += 5
-            return
+            print("====pagination: ",pagination)
+            if pagination < myFilter.count - 2{
+                pagination += 1
+                print("====",myFilter.count)
+                return
+            }
         }
     }
-   
     
-    //    let realm = try! Realm()
-    //    for data in realm.objects(Human.self){
-    //        allPeople.append(data)
-    //    }
-   
+    
+    var jsonString = "{" +
+        "\"Language\": {" +
+        "\"Field\":[" +
+        "{" +
+        "\"Number\":\"976\"," +
+        "\"Name\":\"Test\"" +
+        "}," +
+        "{" +
+        "\"Number\":\"977\"," +
+        "\"Name\":\"Test\"" +
+        "}" +
+        "]" +
+        "}" +
+    "}"
+    
+    let user = Mapper<Human>().map(jsonString)
+    print("")
+    
     
 }
 

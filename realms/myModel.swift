@@ -9,10 +9,20 @@
 import Foundation
 import RealmSwift
 import SwiftyJSON
+import ObjectMapper
 
-class Human: Object{
+class Human: Object,Mappable{
     dynamic var name = ""
     dynamic var age: NSInteger = 0
     dynamic var race = ""
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    func mapping(map: Map) {
+        name <- map["name"]
+        age  <- map["age"]
+        race <- map["race"]
+    }
     
 }

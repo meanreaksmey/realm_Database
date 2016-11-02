@@ -1,4 +1,5 @@
 PODS:
+  - ObjectMapper (2.0.0)
   - Realm (1.1.0):
     - Realm/Headers (= 1.1.0)
   - Realm/Headers (1.1.0)
@@ -7,6 +8,7 @@ PODS:
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - ObjectMapper
   - Realm
   - RealmSwift
   - SwiftyJSON (from `https://github.com/acegreen/SwiftyJSON.git`, branch `swift3`)
@@ -22,10 +24,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/acegreen/SwiftyJSON.git
 
 SPEC CHECKSUMS:
+  ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
   Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
   RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 29e55adc88485fe12629eee47974b43705d9b007
+PODFILE CHECKSUM: 22ba653da55fe80a9adcfd45e0a29ba83ebcf265
 
 COCOAPODS: 1.1.0.rc.2
