@@ -8,6 +8,8 @@
 
 import Foundation
 import RealmSwift
+import SwiftyJSON
+
 class Human: Object{
     dynamic var name = ""
     dynamic var age: NSInteger = 0

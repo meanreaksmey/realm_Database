@@ -12,84 +12,42 @@ import SwiftyJSON
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
+   
+    
     @IBOutlet weak var TableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         //insert data
-        addHuman(name: "bouny",age:30,race:"USA")
-        addHuman(name: "Channy",age:30,race:"KH")
-        addHuman(name: "Ronny",age:30,race:"TH")
-        addHuman(name: "Kakato",age:30,race:"AU")
-        //update data
-        searchData(search_name: "koki",new_name:"Mina")
-        //delete data
-        deleteData(name: "Mina")
-        //filter query data
+               
+        //        //update data
+        //        searchData(search_name: "koki",new_name:"Mina")
+        //        //delete data
+        //        deleteData(name: "Mina")
+        //        //filter query data
+        
         queryPeople()
     }
-    
-    func deleteData(name:String){
-        let realm = try! Realm()
-        try! realm.write {
-            let deletedNotifications = realm.objects(Human.self).filter("name == %@",name)
-            realm.delete(deletedNotifications)
-        }
+    @IBAction func btnDetail(_ sender: AnyObject) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        let nvc = UINavigationController(rootViewController: vc)
+        nvc.modalPresentationStyle = .overCurrentContext
+        self.navigationController?.present (nvc, animated: true, completion: nil)
+        self.navigationController?.show(vc, sender: nil)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.TableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func addHuman(name:String,age:NSInteger,race:String){
-        let mike = Human()
-        mike.name = name
-        mike.age  = age
-        mike.race = race
-        let realm = try! Realm()
-        try! realm.write {
-            if validateData(item: mike.name){
-                print("Added \(mike.name) to Realm\(realm)")
-                realm.add(mike)
-            }
-        }
-        
-    }
-    var allPeople = List<Human>()
-    var jsonData = [JSON]()
     
-    func queryPeople(){
-        let realm = try! Realm()
-        let myFilter = realm.objects(Human.self)
-        for data in myFilter{
-            allPeople.append(data)
-        }
-        //        allPeople.filter("age==13")
-        print(JSON(allPeople))
-        TableView.reloadData()
-    }
-    func getAllPeople()->List<Human>{
-        let items =  List<Human>()
-        let realm = try! Realm()
-        let myFilter = realm.objects(Human.self)
-        for data in myFilter{
-            items.append(data)
-        }
-        return items
+    @IBAction func btnAdd(_ sender: AnyObject) {
+        queryPeople()
+        self.TableView.reloadData()
+        print("======add succes")
     }
     
-    
-    func validateData( item: String)->Bool{
-        
-        print("mytest======= \(allPeople)")
-        for data in getAllPeople(){
-            if item == data.name{
-                print("======= \(item) has ready")
-                
-                return false
-            }
-        }
-        print("======success insert")
-        return true
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -101,29 +59,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "NibTableViewCell", for: indexPath) as! NibTableViewCell
         DispatchQueue.main.async {
             
-            cell.txtName.text =  self.allPeople[indexPath.row]["name"] as? String
-            cell.txtAge.text =  "\(self.allPeople[indexPath.row].age)"
-            cell.txtRace.text =  self.allPeople[indexPath.row]["race"] as? String
+            cell.txtName.text =  allPeople[indexPath.row]["name"] as? String
+            cell.txtAge.text =  "\(allPeople[indexPath.row].age)"
+            cell.txtRace.text =  allPeople[indexPath.row]["race"] as? String
         }
         
         
         //        print("===============",)
         
         return cell
-    }
-    
-    func searchData(search_name:String,new_name:String){
-        
-        for data in getAllPeople(){
-            if search_name == data.name{
-                let realm = try! Realm()
-                try! realm.write {
-                    if validateData(item: new_name){
-                        data.name = new_name
-                    }
-                }
-            }
-        }
     }
 }
 

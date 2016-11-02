@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C3C40776C9443145B2FABF3 /* Pods_realms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE01284A660747B9C96911E4 /* Pods_realms.framework */; };
 		B2056D761DC6D61D0054BAB5 /* myModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2056D751DC6D61D0054BAB5 /* myModel.swift */; };
+		B25ECC9C1DC9813F00143C5E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25ECC9B1DC9813F00143C5E /* DetailViewController.swift */; };
+		B25ECC9E1DC984CD00143C5E /* file.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25ECC9D1DC984CD00143C5E /* file.swift */; };
 		B2618F5D1DC6C8580030FF5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2618F5C1DC6C8580030FF5B /* AppDelegate.swift */; };
 		B2618F5F1DC6C8580030FF5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2618F5E1DC6C8580030FF5B /* ViewController.swift */; };
 		B2618F621DC6C8580030FF5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2618F601DC6C8580030FF5B /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 		181CA219D84BBD4717BBD8AF /* Pods-realms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-realms.debug.xcconfig"; path = "Pods/Target Support Files/Pods-realms/Pods-realms.debug.xcconfig"; sourceTree = "<group>"; };
 		212169860A317BE673A3B230 /* Pods-realms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-realms.release.xcconfig"; path = "Pods/Target Support Files/Pods-realms/Pods-realms.release.xcconfig"; sourceTree = "<group>"; };
 		B2056D751DC6D61D0054BAB5 /* myModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myModel.swift; sourceTree = "<group>"; };
+		B25ECC9B1DC9813F00143C5E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B25ECC9D1DC984CD00143C5E /* file.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = file.swift; sourceTree = "<group>"; };
 		B2618F591DC6C8580030FF5B /* realms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = realms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2618F5C1DC6C8580030FF5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2618F5E1DC6C8580030FF5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				B2056D751DC6D61D0054BAB5 /* myModel.swift */,
+				B25ECC9D1DC984CD00143C5E /* file.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 			children = (
 				B2056D741DC6D60E0054BAB5 /* model */,
 				B2618F5C1DC6C8580030FF5B /* AppDelegate.swift */,
+				B25ECC9B1DC9813F00143C5E /* DetailViewController.swift */,
 				B2618F5E1DC6C8580030FF5B /* ViewController.swift */,
 				B2B40ED71DC8190000D05938 /* MenuViewController.swift */,
 				B2618F601DC6C8580030FF5B /* Main.storyboard */,
@@ -351,9 +357,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B25ECC9E1DC984CD00143C5E /* file.swift in Sources */,
 				B2618F5F1DC6C8580030FF5B /* ViewController.swift in Sources */,
 				B2056D761DC6D61D0054BAB5 /* myModel.swift in Sources */,
 				B2618F5D1DC6C8580030FF5B /* AppDelegate.swift in Sources */,
+				B25ECC9C1DC9813F00143C5E /* DetailViewController.swift in Sources */,
 				B2B40EDA1DC81D6E00D05938 /* InsertViewController.swift in Sources */,
 				B2B40ED81DC8190000D05938 /* MenuViewController.swift in Sources */,
 			);
